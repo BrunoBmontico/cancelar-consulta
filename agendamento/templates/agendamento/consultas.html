@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>consultas</h1>
+    {% for consulta in consultas_paciente %}
+        <p>--------------</p>
+        <p>id: {{consulta.id}}</p>
+        <p>medico: {{consulta.medico}}</p>
+        <p>especialidade: {{consulta.especialidade}}</p>
+        <p>status: {{consulta.status}}</p>
+        <button><a href="{% url 'deletar_consulta' id=consulta.id %}" >cancelar</a></button>
+        <p>--------------</p>
+    </div>
+    {% endfor %}
+
+</body>
+</html>
